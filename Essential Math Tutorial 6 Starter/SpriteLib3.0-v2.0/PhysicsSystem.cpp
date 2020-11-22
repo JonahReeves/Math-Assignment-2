@@ -152,4 +152,21 @@ void PhysicsSystem::Run(b2World & world)
 
 	//steps through the world
 	world.Step(timeStep, velocityIterations, positionIterations);
+
+	CleanupBodies();
+}
+
+void PhysicsSystem::CleanupBodies()
+{
+	for (int i = 0; i < PhysicsBody::m_bodiesToDelete.size(); i++)
+	{
+		//Bodies to delete
+		ECS::GetComponent<PhysicsBody>(PhysicsBody::m_bodiesToDelete[i]).DeleteBody();
+
+		//Destroy the entity
+		ECS::DestroyEntity(PhysicsBody::m_bodiesToDelete[i]);
+	}
+
+	//Clear bodies to delete
+	PhysicsBody::m_bodiesToDelete.clear();
 }

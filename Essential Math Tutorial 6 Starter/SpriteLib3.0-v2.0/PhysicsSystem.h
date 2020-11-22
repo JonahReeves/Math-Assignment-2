@@ -21,4 +21,7 @@ namespace PhysicsSystem
 
 	//Run our collision detection (will run different collision detection using physics body
 	void Run(b2World& world);
+
+	//Cleanup bodies after step
+	void CleanupBodies();
 }
