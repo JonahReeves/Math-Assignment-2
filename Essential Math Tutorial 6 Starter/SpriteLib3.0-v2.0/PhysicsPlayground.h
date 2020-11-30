@@ -21,10 +21,12 @@ public:
 	int dynamicBall(std::string file, int fileLength, int fileWidth, float xVal, float yVal, float layerVal, float rotationAngleDeg = 0.0);
 	int basicDestroTrigger(std::string file, int fileLength, int fileWidth, float xVal, float yVal, float layerVal, int target, float rotationAngleDeg = 0.0);//Setup trigger
 	int basicTranslateTrigger(std::string file, int fileLength, int fileWidth, float xVal, float yVal, float layerVal, int direction, int target, int speed = 100000, float rotationAngleDeg = 0.0);//Setup trigger
+	int boulder(int fileLength, int fileWidth, float xVal, float yVal, int rotation);
 protected:
 	PhysicsPlaygroundListener listener;
 
 	int movingPlat = 0;
-	int ball = 0;
+	int expander1 = 0;
 	int wall = 0;
+	int spinner = 0;
 };

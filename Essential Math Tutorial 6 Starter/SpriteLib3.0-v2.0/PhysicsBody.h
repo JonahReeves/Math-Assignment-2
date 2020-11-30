@@ -13,6 +13,8 @@ enum class BodyType
 	BOX,
 	CIRCLE,
 	TRIANGLE,
+	BOULDER,
+	SEESAW,
 
 	NUM_TYPES
 };
